@@ -99,10 +99,11 @@
     async function run()
     {
         // load face detection model
-        await faceapi.loadSsdMobilenetv1Model('models')
-        await faceapi.loadFaceLandmarkModel('models')
-        await faceapi.loadFaceRecognitionModel('models')
-        await faceapi.loadFaceExpressionModel('models')
+        const path = window.location.href
+        await faceapi.loadSsdMobilenetv1Model(path + '/models')
+        await faceapi.loadFaceLandmarkModel(path + '/models')
+        await faceapi.loadFaceRecognitionModel(path + '/models')
+        await faceapi.loadFaceExpressionModel(path + '/models')
         isFaceDetectionModelLoaded = true
         console.log("Models loaded!")
 
